@@ -19,8 +19,9 @@ def index(request):
 
 
 def sobre(request):
-    pessoa = Pessoa.objects.all()
+    pessoa = Pessoa.objects.filter(ativo=True)
     contexto = {
         'pessoas':pessoa
     }
     return render(request, 'sobre.html', contexto)
+
